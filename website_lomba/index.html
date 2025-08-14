@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CryptoEdu — Edukasi Kripto & Airdrop</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Website Edukasi Kripto" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">CE</div>
+        <div>
+          <div style="font-weight:700">CryptoEdu</div>
+          <div style="font-size:12px;color:var(--muted)">Belajar Kripto & Airdrop</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#materi">Materi</a>
+        <a class="btn" href="#airdrop">Airdrop</a>
+        <a class="btn" href="#kuis">Kuis</a>
+        <a class="btn primary" href="#kuis">Mulai Kuis</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card hero-left">
+          <h1>Belajar Kripto dari Nol sampai Pro — Praktis & Interaktif</h1>
+          <div class="subtitle">Panduan aman, materi ringkas, contoh nyata, dan kuis 20 soal untuk menguji pengetahuanmu tentang kripto & airdrop.</div>
+
+          <div class="cta-row">
+            <div class="search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:.7"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle></svg>
+              <input id="searchInput" placeholder="Cari materi atau kata kunci... (misal: NFT, wallet, airdrop)" />
+            </div>
+            <button class="btn" id="saveProfileBtn">Simpan Nama</button>
+          </div>
+
+          <div class="grid-2" id="materi">
+            <div class="card">
+              <h3 style="margin:0 0 16px 0; font-weight:600; font-size:18px">Dasar Kripto</h3>
+              <div class="lesson-card">
+                <div class="badge">01</div>
+                <div>
+                  <h4>Apa itu Cryptocurrency?</h4>
+                  <p>Pengenalan mata uang digital, prinsip desentralisasi, contoh: Bitcoin & Ethereum.</p>
+                </div>
+              </div>
+              <div class="lesson-card">
+                <div class="badge">02</div>
+                <div>
+                  <h4>Wallet & Kunci</h4>
+                  <p>Perbedaan hot wallet & cold wallet, private key vs public key, keamanan dasar.</p>
+                </div>
+              </div>
+              <div class="lesson-card">
+                <div class="badge">03</div>
+                <div>
+                  <h4>Transaksi & Gas Fee</h4>
+                  <p>Bagaimana transaksi berjalan, biaya gas, dan cara menghemat biaya.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="margin:0 0 16px 0; font-weight:600; font-size:18px">Topik Lanjutan</h3>
+              <div class="lesson-card">
+                <div class="badge">04</div>
+                <div>
+                  <h4>Smart Contract</h4>
+                  <p>Kontrak otomatis di blockchain dan contoh penggunaan pada DeFi.</p>
+                </div>
+              </div>
+              <div class="lesson-card">
+                <div class="badge">05</div>
+                <div>
+                  <h4>DeFi & AMM</h4>
+                  <p>Konsep pinjam-meminjam, liquidity pool, dan automated market maker.</p>
+                </div>
+              </div>
+              <div class="lesson-card">
+                <div class="badge">06</div>
+                <div>
+                  <h4>NFT & Metaverse</h4>
+                  <p>Apa itu NFT, use-case, dan hubungan dengan ekonomi digital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+            <a class="btn primary" href="#kuis">Mulai Kuis 20 Soal</a>
+            <a class="btn" href="#airdrop">Baca Panduan Airdrop</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0; margin-bottom:12px; font-weight:600">Ringkasan Cepat</h3>
+          <p class="subtitle">Butuh waktu 30 menit sehari. Kuasai konsep, aturan keamanan, dan praktik airdrop dengan aman.</p>
+
+          <div style="margin-top:16px">
+            <div style="font-weight:700; margin-bottom:8px">Keunggulan:</div>
+            <ul style="padding-left:20px; color:var(--muted)">
+              <li>Materi ringkas & terstruktur</li>
+              <li>Kuis seputar kripto — 20 soal</li>
+              <li>Tips keamanan & checklist airdrop</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:20px">
+            <div style="font-weight:700; margin-bottom:8px">Status Kuis</div>
+            <div class="progress" style="margin-top:8px"><i id="mainProgress"></i></div>
+            <div style="margin-top:10px; color:var(--muted); font-size:13px">Skor tertinggi: <span id="bestScore">-</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card" id="airdrop" style="margin-top:24px">
+        <h3 style="margin-top:0; margin-bottom:16px; font-weight:600; font-size:18px">Panduan Airdrop Aman</h3>
+        <div class="tips">
+          <p class="subtitle">Airdrop dapat menjadi cara memperoleh token gratis — tapi berisiko. Berikut checklist penting:</p>
+          <ul>
+            <li>Jangan pernah membagikan private key atau seed phrase.</li>
+            <li>Periksa reputasi proyek: media sosial, whitepaper, dan komunitas.</li>
+            <li>Waspadai phishing: domain mirip, DM mencurigakan, atau aplikasi meminta akses penuh.</li>
+            <li>Gunakan wallet terpisah untuk eksperimen airdrop (hot wallet). Jangan gunakan wallet utama.
+            </li>
+            <li>Verifikasi kontrak token di explorer seperti Etherscan sebelum menandatangani transaksi.</li>
+          </ul>
+          <p style="margin-top:14px;color:var(--muted); font-size:14px">Tip: Gunakan VPN, gunakan akun baru, dan batasi izin saat mencoba airdrop dari proyek yang belum jelas.</p>
+        </div>
+      </section>
+
+      <section class="card" id="kuis" style="margin-top:24px">
+        <h3 style="margin-top:0; margin-bottom:16px; font-weight:600; font-size:18px">Kuis Interaktif — 20 Soal (Kripto & Airdrop)</h3>
+        <div style="display:flex; gap:16px; flex-direction:column">
+          <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+            <div>
+              <label style="font-size:13px;color:var(--muted)">Nama Peserta</label>
+              <input id="playerName" placeholder="Masukkan nama..." style="margin-left:8px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit;min-width:180px" />
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="btn" id="resetBtn">Reset Kuis</button>
+              <button class="btn primary" id="startBtn">Mulai Kuis</button>
+            </div>
+          </div>
+
+          <div id="quizCard" style="display:none;">
+            <div class="quiz-area card">
+              <div style="display:flex;justify-content:space-between;align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px">
+                <div>
+                  <div style="font-size:13px;color:var(--muted)" id="qMeta">Soal <span id="qIndex">1</span> / 20</div>
+                  <div class="question" id="qText">Pertanyaan akan muncul di sini</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-weight:700; font-size:18px" id="timer">20:00</div>
+                  <div style="font-size:12px;color:var(--muted)">Waktu tersisa</div>
+                </div>
+              </div>
+
+              <div class="options" id="options"></div>
+
+              <div class="controls">
+                <div style="display:flex;gap:8px">
+                  <button class="btn" id="prevBtn">Sebelumnya</button>
+                  <button class="btn" id="nextBtn">Selanjutnya</button>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <div style="font-size:13px;color:var(--muted)">Skor: <span id="score">0</span></div>
+                  <button class="btn primary" id="submitBtn">Kumpulkan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="resultCard" style="display:none;" class="card">
+            <h3 style="margin-top:0; margin-bottom:12px">Hasilmu</h3>
+            <div style="font-size:18px;font-weight:700">Selamat, <span id="resName">Peserta</span>!</div>
+            <p style="color:var(--muted)">Skor kamu: <strong id="finalScore">0</strong> / 20</p>
+            <div id="resMessage" style="margin-top:8px;color:var(--muted)"></div>
+            <div style="margin-top:16px;display:flex;gap:8px; flex-wrap:wrap">
+              <button class="btn" id="retryBtn">Ulangi</button>
+              <button class="btn primary" id="shareBtn">Bagikan Hasil</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        CryptoEdu ©2025
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
